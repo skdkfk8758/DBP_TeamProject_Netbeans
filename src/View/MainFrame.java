@@ -484,6 +484,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
         // TODO add your handling code here:
+        //ddddd
+        System.out.println("View.MainFrame.jTextField18ActionPerformed()");
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     /**
