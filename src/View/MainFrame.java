@@ -38,87 +38,114 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        Tf_Date = new javax.swing.JTextField();
+        Tf_Price = new javax.swing.JTextField();
+        Tf_Event = new javax.swing.JTextField();
+        Tf_Name = new javax.swing.JTextField();
+        Tf_Payment = new javax.swing.JTextField();
+        Tf_Remarks = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         PayTable = new javax.swing.JTable();
+        FrameCall_Calander = new javax.swing.JButton();
+        Btn_Enter_Mfs = new javax.swing.JButton();
+        Btn_Reset_Mfs = new javax.swing.JButton();
+        Btn_Update_Mfs = new javax.swing.JButton();
+        Btn_Delete_Mfs = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        Tf_Index = new javax.swing.JTextField();
+        FrameCall_Member = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        Tf_AllMoney = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        Tf_PresentMoney = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        Tf_NotPaymoney = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        CB_Sort = new javax.swing.JComboBox<>();
         Panel_MemberManager = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         MemberTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        TF_StudentId = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        Tf_Department = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        Tf_Name_Mem = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        Tf_Phone = new javax.swing.JTextField();
+        Btn_Enter_Mem = new javax.swing.JButton();
+        Btn_Update_Mem = new javax.swing.JButton();
+        Btn_Delete_Mem = new javax.swing.JButton();
+        Btn_Reset_Mem = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        TF_OldStudent = new javax.swing.JTextField();
+        TF_NewStudent = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        TF_AllStudent = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
         Panel_EventManager = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         EventTable = new javax.swing.JTable();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        TF_EventDate = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        TF_EventName = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        TF_AverageMoney = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("날짜 : ");
+        jLabel1.setText("날      짜");
 
-        jLabel2.setText("행사 : ");
+        jLabel2.setText("행      사");
 
-        jLabel3.setText("금액 : ");
+        jLabel3.setText("금      액");
 
-        jLabel4.setText("이름 : ");
+        jLabel4.setText("이      름");
 
-        jLabel5.setText("납부금액 : ");
+        jLabel5.setText("납부금액");
 
-        jLabel7.setText("비고 : ");
+        jLabel7.setText("비      고");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Date.setText("날짜 선택");
+        Tf_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Tf_DateActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jTextField1");
-
-        jTextField3.setText("jTextField1");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Price.setText("행사 금액");
+        Tf_Price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                Tf_PriceActionPerformed(evt);
             }
         });
 
-        jTextField4.setText("jTextField1");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Event.setText("행사 선택");
+        Tf_Event.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                Tf_EventActionPerformed(evt);
             }
         });
 
-        jTextField5.setText("jTextField1");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Name.setText("학생 이름");
+        Tf_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                Tf_NameActionPerformed(evt);
             }
         });
 
-        jTextField6.setText("jTextField1");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Payment.setText("납부 금액");
+        Tf_Payment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                Tf_PaymentActionPerformed(evt);
+            }
+        });
+
+        Tf_Remarks.setText("비고");
+        Tf_Remarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_RemarksActionPerformed(evt);
             }
         });
 
@@ -127,14 +154,88 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+                "Index", "날짜", "이름", "행사", "금액", "납부금액", "미납금액", "비고"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         PayTable.getTableHeader().setResizingAllowed(false);
         PayTable.getTableHeader().setReorderingAllowed(false);
         PayTable.getTableHeader().setReorderingAllowed(false);
         PayTable.getTableHeader().setResizingAllowed(false);
         jScrollPane4.setViewportView(PayTable);
+
+        FrameCall_Calander.setText("달력");
+        FrameCall_Calander.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FrameCall_CalanderActionPerformed(evt);
+            }
+        });
+
+        Btn_Enter_Mfs.setText("입력");
+
+        Btn_Reset_Mfs.setText("초기화");
+
+        Btn_Update_Mfs.setText("수정");
+
+        Btn_Delete_Mfs.setText("삭제");
+
+        jLabel11.setText("번      호");
+
+        Tf_Index.setEditable(false);
+        Tf_Index.setText("인덱스 번호");
+        Tf_Index.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_IndexActionPerformed(evt);
+            }
+        });
+
+        FrameCall_Member.setText("회원");
+
+        jLabel12.setText("전체잔액");
+
+        Tf_AllMoney.setEditable(false);
+        Tf_AllMoney.setText("전체잔액");
+        Tf_AllMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_AllMoneyActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("현재잔액");
+
+        Tf_PresentMoney.setEditable(false);
+        Tf_PresentMoney.setText("현재잔액");
+        Tf_PresentMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_PresentMoneyActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("미납총액");
+
+        Tf_NotPaymoney.setEditable(false);
+        Tf_NotPaymoney.setText("미납총액");
+        Tf_NotPaymoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tf_NotPaymoneyActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("정렬방법");
+
+        CB_Sort.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CB_Sort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_SortActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_PayManagerLayout = new javax.swing.GroupLayout(Panel_PayManager);
         Panel_PayManager.setLayout(Panel_PayManagerLayout);
@@ -143,33 +244,64 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_PayManagerLayout.createSequentialGroup()
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Tf_Remarks, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Tf_Payment, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Tf_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Tf_Price, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Tf_Event))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FrameCall_Member))
+                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                .addComponent(Tf_Date)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FrameCall_Calander))))
                     .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                        .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Tf_Index, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+                                .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Tf_NotPaymoney))
+                                .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Tf_PresentMoney))
+                                .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                    .addComponent(jLabel12)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Tf_AllMoney)))
+                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CB_Sort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                .addComponent(Btn_Enter_Mfs)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Btn_Update_Mfs)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Btn_Delete_Mfs)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Btn_Reset_Mfs)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         Panel_PayManagerLayout.setVerticalGroup(
             Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,30 +310,60 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tf_AllMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tf_PresentMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tf_NotPaymoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CB_Sort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tf_Index, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FrameCall_Member))
+                                .addGap(18, 18, 18)
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_Payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_Remarks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Tf_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FrameCall_Calander))
+                                .addGap(18, 18, 18)
+                                .addComponent(Tf_Event, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(44, 44, 44)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 136, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
+                            .addComponent(Btn_Enter_Mfs)
+                            .addComponent(Btn_Reset_Mfs)
+                            .addComponent(Btn_Update_Mfs)
+                            .addComponent(Btn_Delete_Mfs)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -214,43 +376,89 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "날짜", "행사", "Title 3", "Title 4"
+                "학번", "학과", "이름", "전화번호"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         MemberTable.getTableHeader().setResizingAllowed(false);
         MemberTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(MemberTable);
 
-        jLabel6.setText("학번 : ");
+        jLabel6.setText("학      번");
 
-        jTextField7.setText("jTextField1");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        TF_StudentId.setText("학번입력");
+        TF_StudentId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                TF_StudentIdActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("학과 : ");
+        jLabel8.setText("학      과");
 
-        jTextField8.setText("jTextField1");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Department.setText("학과입력");
+        Tf_Department.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                Tf_DepartmentActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("이름 : ");
+        jLabel9.setText("이      름");
 
-        jTextField9.setText("jTextField1");
+        Tf_Name_Mem.setText("이름입력");
 
-        jLabel10.setText("전화번호 : ");
+        jLabel10.setText("전화번호");
 
-        jTextField10.setText("jTextField1");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        Tf_Phone.setText("전화번호");
+        Tf_Phone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                Tf_PhoneActionPerformed(evt);
             }
         });
+
+        Btn_Enter_Mem.setText("입력");
+
+        Btn_Update_Mem.setText("수정");
+
+        Btn_Delete_Mem.setText("삭제");
+
+        Btn_Reset_Mem.setText("초기화");
+
+        jLabel21.setText("재 학 생");
+
+        TF_OldStudent.setEditable(false);
+        TF_OldStudent.setText("재학생 인원");
+        TF_OldStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF_OldStudentActionPerformed(evt);
+            }
+        });
+
+        TF_NewStudent.setEditable(false);
+        TF_NewStudent.setText("신입생 인원");
+        TF_NewStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF_NewStudentActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("신 입 생");
+
+        TF_AllStudent.setEditable(false);
+        TF_AllStudent.setText("총인원");
+        TF_AllStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF_AllStudentActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("총     원");
 
         javax.swing.GroupLayout Panel_MemberManagerLayout = new javax.swing.GroupLayout(Panel_MemberManager);
         Panel_MemberManager.setLayout(Panel_MemberManagerLayout);
@@ -262,47 +470,86 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(Btn_Enter_Mem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Btn_Update_Mem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Delete_Mem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Reset_Mem))
+                    .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_MemberManagerLayout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Tf_Department))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_MemberManagerLayout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(TF_StudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_MemberManagerLayout.createSequentialGroup()
+                            .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel10))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Tf_Phone)
+                                .addComponent(Tf_Name_Mem))))
                     .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TF_OldStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                        .addComponent(jLabel22)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TF_NewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                        .addComponent(TF_AllStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel_MemberManagerLayout.setVerticalGroup(
             Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_MemberManagerLayout.createSequentialGroup()
-                        .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
+                .addComponent(jScrollPane2)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_MemberManagerLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_OldStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_NewStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_AllStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_StudentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tf_Department, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tf_Name_Mem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tf_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Enter_Mem)
+                    .addComponent(Btn_Reset_Mem)
+                    .addComponent(Btn_Update_Mem)
+                    .addComponent(Btn_Delete_Mem))
+                .addGap(113, 113, 113))
         );
 
         JTabbedPane.addTab("회원관리", Panel_MemberManager);
@@ -312,50 +559,48 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "날짜", "행사", "Title 3", "Title 4", "제목 5"
+                "날짜", "행사", "참여인원", "회비총액", "미납총액"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         EventTable.getTableHeader().setResizingAllowed(false);
         EventTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(EventTable);
 
-        jLabel13.setText("날짜 : ");
+        jLabel24.setText("날      짜");
 
-        jTextField13.setText("jTextField1");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        TF_EventDate.setEditable(false);
+        TF_EventDate.setText("행사 날짜");
+        TF_EventDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                TF_EventDateActionPerformed(evt);
             }
         });
 
-        jLabel14.setText("행사이름 : ");
+        jLabel25.setText("행      사");
 
-        jTextField14.setText("jTextField1");
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        TF_EventName.setEditable(false);
+        TF_EventName.setText("행사 이름");
+        TF_EventName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                TF_EventNameActionPerformed(evt);
             }
         });
 
-        jLabel15.setText("행사내용 : ");
+        jLabel26.setText("평균회비 ");
 
-        jTextField15.setText("jTextField1");
-
-        jLabel16.setText("회비 : ");
-
-        jTextField16.setText("jTextField1");
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        TF_AverageMoney.setEditable(false);
+        TF_AverageMoney.setText("1인당 평균회비");
+        TF_AverageMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
-            }
-        });
-
-        jLabel18.setText("비고 : ");
-
-        jTextField18.setText("jTextField1");
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
+                TF_AverageMoneyActionPerformed(evt);
             }
         });
 
@@ -369,55 +614,39 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TF_EventDate, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TF_EventName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
+                        .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                        .addComponent(TF_AverageMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         Panel_EventManagerLayout.setVerticalGroup(
             Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_EventManagerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(Panel_EventManagerLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_EventDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_EventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_AverageMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         JTabbedPane.addTab("행사관리", Panel_EventManager);
@@ -434,8 +663,8 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(JTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(JTabbedPane)
                 .addContainerGap())
         );
 
@@ -445,53 +674,94 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void Tf_EventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_EventActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_Tf_EventActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void Tf_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_Tf_NameActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void Tf_PaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PaymentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_Tf_PaymentActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void Tf_RemarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_RemarksActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_Tf_RemarksActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Tf_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Tf_DateActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void TF_StudentIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_StudentIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_TF_StudentIdActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void Tf_DepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DepartmentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_Tf_DepartmentActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void Tf_PhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_Tf_PhoneActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void Tf_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_Tf_PriceActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        new Frame_Calander();
+
+        
+        
+    }//GEN-LAST:event_FrameCall_CalanderActionPerformed
+
+    private void Tf_IndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_IndexActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_Tf_IndexActionPerformed
+
+    private void Tf_AllMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_AllMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_AllMoneyActionPerformed
+
+    private void Tf_PresentMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PresentMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_PresentMoneyActionPerformed
+
+    private void Tf_NotPaymoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotPaymoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_NotPaymoneyActionPerformed
+
+    private void CB_SortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_SortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_SortActionPerformed
+
+    private void TF_OldStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_OldStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_OldStudentActionPerformed
+
+    private void TF_NewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_NewStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_NewStudentActionPerformed
+
+    private void TF_AllStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_AllStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_AllStudentActionPerformed
+
+    private void TF_EventDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_EventDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_EventDateActionPerformed
+
+    private void TF_EventNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_EventNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_EventNameActionPerformed
+
+    private void TF_AverageMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_AverageMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_AverageMoneyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,21 +804,58 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Delete_Mem;
+    private javax.swing.JButton Btn_Delete_Mfs;
+    private javax.swing.JButton Btn_Enter_Mem;
+    private javax.swing.JButton Btn_Enter_Mfs;
+    private javax.swing.JButton Btn_Reset_Mem;
+    private javax.swing.JButton Btn_Reset_Mfs;
+    private javax.swing.JButton Btn_Update_Mem;
+    private javax.swing.JButton Btn_Update_Mfs;
+    private javax.swing.JComboBox<String> CB_Sort;
     private javax.swing.JTable EventTable;
+    private javax.swing.JButton FrameCall_Calander;
+    private javax.swing.JButton FrameCall_Member;
     private javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JTable MemberTable;
     private javax.swing.JPanel Panel_EventManager;
     private javax.swing.JPanel Panel_MemberManager;
     private javax.swing.JPanel Panel_PayManager;
     private javax.swing.JTable PayTable;
+    private javax.swing.JTextField TF_AllStudent;
+    private javax.swing.JTextField TF_AverageMoney;
+    private javax.swing.JTextField TF_EventDate;
+    private javax.swing.JTextField TF_EventName;
+    private javax.swing.JTextField TF_NewStudent;
+    private javax.swing.JTextField TF_OldStudent;
+    private javax.swing.JTextField TF_StudentId;
+    private javax.swing.JTextField Tf_AllMoney;
+    private javax.swing.JTextField Tf_Date;
+    private javax.swing.JTextField Tf_Department;
+    private javax.swing.JTextField Tf_Event;
+    private javax.swing.JTextField Tf_Index;
+    private javax.swing.JTextField Tf_Name;
+    private javax.swing.JTextField Tf_Name_Mem;
+    private javax.swing.JTextField Tf_NotPaymoney;
+    private javax.swing.JTextField Tf_Payment;
+    private javax.swing.JTextField Tf_Phone;
+    private javax.swing.JTextField Tf_PresentMoney;
+    private javax.swing.JTextField Tf_Price;
+    private javax.swing.JTextField Tf_Remarks;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -559,20 +866,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
