@@ -32,8 +32,8 @@ public class DB_Handler {
     //디비 접속을 위한 변수선
     private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static String url = "jdbc:oracle:thin:@25.11.88.29:1521:xe";
-    private static String user = "system1";
-    private static String password = "system1";
+    private static String user = "test1";
+    private static String password = "test1";
 
     static {
         try {

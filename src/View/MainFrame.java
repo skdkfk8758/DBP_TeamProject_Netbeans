@@ -5,8 +5,11 @@
  */
 package View;
 
+import BackGround.MemberDAO;
+import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +22,8 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        tableRefresh_MemberTable();
+        tableRefresh_MsfTable();
     }
 
     /**
@@ -45,7 +50,7 @@ public class MainFrame extends javax.swing.JFrame {
         Tf_Payment = new javax.swing.JTextField();
         Tf_Remarks = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        PayTable = new javax.swing.JTable();
+        MsfTable = new javax.swing.JTable();
         FrameCall_Calander = new javax.swing.JButton();
         Btn_Enter_Mfs = new javax.swing.JButton();
         Btn_Reset_Mfs = new javax.swing.JButton();
@@ -107,7 +112,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel7.setText("비      고");
 
-        Tf_Date.setText("날짜 선택");
+        Tf_Date.setEditable(false);
         Tf_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tf_DateActionPerformed(evt);
@@ -121,7 +126,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Tf_Event.setText("행사 선택");
+        Tf_Event.setText("행사 입력");
         Tf_Event.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tf_EventActionPerformed(evt);
@@ -149,7 +154,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        PayTable.setModel(new javax.swing.table.DefaultTableModel(
+        MsfTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -165,11 +170,11 @@ public class MainFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        PayTable.getTableHeader().setResizingAllowed(false);
-        PayTable.getTableHeader().setReorderingAllowed(false);
-        PayTable.getTableHeader().setReorderingAllowed(false);
-        PayTable.getTableHeader().setResizingAllowed(false);
-        jScrollPane4.setViewportView(PayTable);
+        MsfTable.getTableHeader().setResizingAllowed(false);
+        MsfTable.getTableHeader().setReorderingAllowed(false);
+        MsfTable.getTableHeader().setReorderingAllowed(false);
+        MsfTable.getTableHeader().setResizingAllowed(false);
+        jScrollPane4.setViewportView(MsfTable);
 
         FrameCall_Calander.setText("달력");
         FrameCall_Calander.addActionListener(new java.awt.event.ActionListener() {
@@ -243,8 +248,8 @@ public class MainFrame extends javax.swing.JFrame {
             Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +305,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(Btn_Delete_Mfs)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Btn_Reset_Mfs)))
-                        .addGap(0, 6, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Panel_PayManagerLayout.setVerticalGroup(
@@ -515,7 +520,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane2)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_MemberManagerLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(Panel_MemberManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TF_OldStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -625,7 +630,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TF_AverageMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         Panel_EventManagerLayout.setVerticalGroup(
             Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -712,11 +717,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
 
-
-        new Frame_Calander();
-
-        
-        
+        new Frame_Calander(0);
     }//GEN-LAST:event_FrameCall_CalanderActionPerformed
 
     private void Tf_IndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_IndexActionPerformed
@@ -763,10 +764,48 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TF_AverageMoneyActionPerformed
 
+    public Vector getColumn_MemberTable() {
+        Vector col = new Vector();
+
+        System.out.println(MemberTable.getColumnCount());
+
+        for (int i = 0; i < MemberTable.getColumnCount(); i++) {
+            col.add(MemberTable.getColumnName(i));
+
+        }
+        return col;
+    }
+
+    public Vector getColumn_MsfTable() {
+        Vector col = new Vector();
+
+        for (int i = 0; i < MsfTable.getColumnCount(); i++) {
+            col.add(MsfTable.getColumnName(i));
+
+        }
+
+        return col;
+    }
+
+    public void tableRefresh_MemberTable() {
+
+        MemberDAO dao = new MemberDAO();
+        DefaultTableModel model = new DefaultTableModel(dao.getMemberList(), getColumn_MemberTable());
+        MemberTable.setModel(model);
+
+    }
+    
+     public void tableRefresh_MsfTable() {
+
+        MemberDAO dao = new MemberDAO();
+        DefaultTableModel model = new DefaultTableModel(dao.getMemberList(), getColumn_MsfTable());
+        MsfTable.setModel(model);
+
+    }
+
     /**
      * @param args the command line arguments
      */
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -791,14 +830,13 @@ public class MainFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MainFrame f = new MainFrame();
-                
+
                 f.setTitle("회비관리 프로그램");
-                f.setVisible(true);             
+                f.setVisible(true);
             }
         });
     }
@@ -818,10 +856,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton FrameCall_Member;
     private javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JTable MemberTable;
+    private javax.swing.JTable MsfTable;
     private javax.swing.JPanel Panel_EventManager;
     private javax.swing.JPanel Panel_MemberManager;
     private javax.swing.JPanel Panel_PayManager;
-    private javax.swing.JTable PayTable;
     private javax.swing.JTextField TF_AllStudent;
     private javax.swing.JTextField TF_AverageMoney;
     private javax.swing.JTextField TF_EventDate;
@@ -830,7 +868,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField TF_OldStudent;
     private javax.swing.JTextField TF_StudentId;
     private javax.swing.JTextField Tf_AllMoney;
-    private javax.swing.JTextField Tf_Date;
+    public static javax.swing.JTextField Tf_Date;
     private javax.swing.JTextField Tf_Department;
     private javax.swing.JTextField Tf_Event;
     private javax.swing.JTextField Tf_Index;
@@ -867,4 +905,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
+
+    public static void setTf_Date(String str) {
+        MainFrame.Tf_Date.setText(str);
+    }
+
 }

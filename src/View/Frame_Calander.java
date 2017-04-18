@@ -7,6 +7,8 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -64,12 +66,17 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
     String CalHeader[] = {"일", "월", "화", "수", "목", "금", "토"};
     String CalData[][] = new String[7][7];
     String Month;
-    JButton MonthName;
-
+    String DATE;
+    
     JTable calTable;
+    
+    JButton MonthName;
+    
+    JButton Btn_Next;
+    JButton Btn_Prev;
+    JButton Btn_Enter;
 
-    JButton PrevBtn = new JButton("Prev");
-    JButton NextBtn = new JButton("Next");
+    int flag = 0;
 
     // 날짜 설정
     static SimpleDateFormat year_S = new SimpleDateFormat("yyyy", Locale.KOREA);
@@ -81,7 +88,8 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
     static int year = Integer.parseInt(mTime_Y);
     static int month = Integer.parseInt(mTime_M);
 
-    class MakeCalendar // 달력만드는 클래스
+    // 달력구성하는 알고리즘
+    class MakeCalendar 
     {
 
         public MakeCalendar(int flag) {
@@ -146,61 +154,85 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
         return CalScrollPane;
     }
 
-    // 달력을 출력하는 메소드
-    public Frame_Calander() {
+    // 달력을 출력하는 메소드 (생성자)
+    public Frame_Calander(int flag) {
 
         setLayout(new BorderLayout(20, 20));
 
-        JScrollPane CalScrollPane = MakeCalScrollPane(0);
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout());
+
+        Btn_Next = new JButton("Next");
+        Btn_Prev = new JButton("Prev");
+        Btn_Enter = new JButton("Enter");
+
+        Btn_Next.addActionListener(this);
+        Btn_Prev.addActionListener(this);
+        Btn_Enter.addActionListener(this);
+
+        JScrollPane CalScrollPane = MakeCalScrollPane(flag);
 
         Month = Integer.toString(cal.get(Calendar.MONTH) + 1);
         MonthName = new JButton(cal.get(Calendar.YEAR) + "년 " + Month + "월 ");
 
+        addMouseListener(this);
         add(MonthName, BorderLayout.NORTH);
         add(CalScrollPane, BorderLayout.CENTER);
+        p.add(Btn_Next);
+        p.add(Btn_Prev);
+        p.add(Btn_Enter);
+        add(p, BorderLayout.SOUTH);
+
+        setBounds(710,0,0,0);
         setVisible(true);
         pack();
     }
 
-    //달력에서 날짜 얻어오는 부분
+    //달력에서 날짜 얻어오고 텍스트필드에 세팅 이벤트 처리
     @Override
     public void mouseClicked(MouseEvent e) {
 
         int rowIndex = calTable.getSelectedRow();
         int colIndex = calTable.getSelectedColumn();
         String mydate = MonthName.getText();
-
+        DATE = mydate + calTable.getValueAt(rowIndex, colIndex) + "일";
+        MainFrame.setTf_Date(DATE);
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-     @Override
+    //버튼 클릭액션 이벤트
+    @Override
     public void actionPerformed(ActionEvent e) {
-        e.getActionCommand();
-        
-        dispose();
-//        new Frame_Calander());
-    
+
+        String command = e.getActionCommand();
+
+        if (command.equals(Btn_Next.getText())) {
+            dispose();
+            new Frame_Calander(-1);
+        } else if (command.equals(Btn_Prev.getText())) {
+
+            dispose();
+            new Frame_Calander(1);
+
+        } else
+            dispose();
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
