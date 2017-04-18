@@ -62,11 +62,16 @@ public class DB_Handler {
         return connection;
     }
     
-    public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) throws SQLException{
+    //커넥션 및 기타 리소스 해제
+    public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs){
         
+        try{
+         if(rs != null) rs.close();
+         if(pstmt != null) pstmt.close();
         if(conn != null) conn.close();
-        if(pstmt != null) pstmt.close();
-        if(rs != null) rs.close();
+        } catch(Exception e){
+            e.getMessage();
+        }
     }
 
 }
