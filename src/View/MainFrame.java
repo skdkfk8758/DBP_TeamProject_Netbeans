@@ -6,10 +6,15 @@
 package View;
 
 import BackGround.MemberDAO;
+import BackGround.MemberDTO;
+import BackGround.MfsDAO;
+import BackGround.MfsDTO;
 import java.util.Vector;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.StackType;
 
 /**
  *
@@ -23,7 +28,7 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         tableRefresh_MemberTable();
-        tableRefresh_MsfTable();
+        tableRefresh_MfsTable();
     }
 
     /**
@@ -78,7 +83,7 @@ public class MainFrame extends javax.swing.JFrame {
         Tf_Name_Mem = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         Tf_Phone = new javax.swing.JTextField();
-        Btn_Enter_Mem = new javax.swing.JButton();
+        javax.swing.JButton Btn_Enter_Mem = new javax.swing.JButton();
         Btn_Update_Mem = new javax.swing.JButton();
         Btn_Delete_Mem = new javax.swing.JButton();
         Btn_Reset_Mem = new javax.swing.JButton();
@@ -184,12 +189,32 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         Btn_Enter_Mfs.setText("입력");
+        Btn_Enter_Mfs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Enter_MfsActionPerformed(evt);
+            }
+        });
 
         Btn_Reset_Mfs.setText("초기화");
+        Btn_Reset_Mfs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Reset_MfsActionPerformed(evt);
+            }
+        });
 
         Btn_Update_Mfs.setText("수정");
+        Btn_Update_Mfs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Update_MfsActionPerformed(evt);
+            }
+        });
 
         Btn_Delete_Mfs.setText("삭제");
+        Btn_Delete_Mfs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Delete_MfsActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("번      호");
 
@@ -338,7 +363,9 @@ public class MainFrame extends javax.swing.JFrame {
                             .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tf_Event, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -356,12 +383,9 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Tf_Remarks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(Panel_PayManagerLayout.createSequentialGroup()
-                                .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Tf_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FrameCall_Calander))
-                                .addGap(18, 18, 18)
-                                .addComponent(Tf_Event, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Tf_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FrameCall_Calander)))
                         .addGap(44, 44, 44)
                         .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Btn_Enter_Mfs)
@@ -394,11 +418,16 @@ public class MainFrame extends javax.swing.JFrame {
         });
         MemberTable.getTableHeader().setResizingAllowed(false);
         MemberTable.getTableHeader().setReorderingAllowed(false);
+        MemberTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MemberTableMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(MemberTable);
 
         jLabel6.setText("학      번");
 
-        TF_StudentId.setText("학번입력");
+        TF_StudentId.setText("숫자입력");
         TF_StudentId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TF_StudentIdActionPerformed(evt);
@@ -407,7 +436,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel8.setText("학      과");
 
-        Tf_Department.setText("학과입력");
         Tf_Department.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tf_DepartmentActionPerformed(evt);
@@ -416,11 +444,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel9.setText("이      름");
 
-        Tf_Name_Mem.setText("이름입력");
-
         jLabel10.setText("전화번호");
 
-        Tf_Phone.setText("전화번호");
         Tf_Phone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tf_PhoneActionPerformed(evt);
@@ -428,17 +453,36 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         Btn_Enter_Mem.setText("입력");
+        Btn_Enter_Mem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Enter_MemActionPerformed(evt);
+            }
+        });
 
         Btn_Update_Mem.setText("수정");
+        Btn_Update_Mem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Update_MemActionPerformed(evt);
+            }
+        });
 
         Btn_Delete_Mem.setText("삭제");
+        Btn_Delete_Mem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Delete_MemActionPerformed(evt);
+            }
+        });
 
         Btn_Reset_Mem.setText("초기화");
+        Btn_Reset_Mem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Reset_MemActionPerformed(evt);
+            }
+        });
 
         jLabel21.setText("재 학 생");
 
         TF_OldStudent.setEditable(false);
-        TF_OldStudent.setText("재학생 인원");
         TF_OldStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TF_OldStudentActionPerformed(evt);
@@ -446,7 +490,6 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         TF_NewStudent.setEditable(false);
-        TF_NewStudent.setText("신입생 인원");
         TF_NewStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TF_NewStudentActionPerformed(evt);
@@ -456,7 +499,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel22.setText("신 입 생");
 
         TF_AllStudent.setEditable(false);
-        TF_AllStudent.setText("총인원");
         TF_AllStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TF_AllStudentActionPerformed(evt);
@@ -716,7 +758,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_Tf_PriceActionPerformed
 
     private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
-
+        //달력 프레임 호출
         new Frame_Calander(0);
     }//GEN-LAST:event_FrameCall_CalanderActionPerformed
 
@@ -764,44 +806,138 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TF_AverageMoneyActionPerformed
 
-    public Vector getColumn_MemberTable() {
-        Vector col = new Vector();
+    // 회원목록 입력버튼 액션이벤트
+    private void Btn_Enter_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MemActionPerformed
 
-        System.out.println(MemberTable.getColumnCount());
+        MemberDAO dao = new MemberDAO();
+        boolean ok = dao.insertMember(getTfDataToMember());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "회원 추가 성공");
+            setNullData_Member();
+            tableRefresh_MemberTable();
+        } else {
+            JOptionPane.showMessageDialog(this, "회원 추가 실패");
+        }
+
+    }//GEN-LAST:event_Btn_Enter_MemActionPerformed
+
+    //테이블 클릭시 회원 정보 세팅 이벤트
+    private void MemberTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberTableMouseClicked
+
+        int r = MemberTable.getSelectedRow();
+        String id = Integer.toString((int) MemberTable.getValueAt(r, 0));
+        String department = (String) MemberTable.getValueAt(r, 1);
+        String name_Mem = (String) MemberTable.getValueAt(r, 2);
+        String phone = (String) MemberTable.getValueAt(r, 3);
+
+        TF_StudentId.setText(id);
+        Tf_Department.setText(department);
+        Tf_Name_Mem.setText(name_Mem);
+        Tf_Phone.setText(phone);
+
+    }//GEN-LAST:event_MemberTableMouseClicked
+
+    //회원목록 삭제버튼 액션이벤트
+    private void Btn_Delete_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Delete_MemActionPerformed
+
+        MemberDAO dao = new MemberDAO();
+        boolean ok = dao.deleteMember(getTfDataToMember());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "회원 삭제 성공");
+            setNullData_Member();
+            tableRefresh_MemberTable();
+        } else {
+            JOptionPane.showMessageDialog(this, "회원 삭제 실패");
+        }
+    }//GEN-LAST:event_Btn_Delete_MemActionPerformed
+
+    //회원목록 초기화 버튼 액션이벤트
+    private void Btn_Reset_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_MemActionPerformed
+
+        setNullData_Member();
+    }//GEN-LAST:event_Btn_Reset_MemActionPerformed
+
+    //회원정보 수정 버튼 액션이벤트
+    private void Btn_Update_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Update_MemActionPerformed
+        MemberDAO dao = new MemberDAO();
+        boolean ok = dao.updateMember(getTfDataToMember());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "회원정보 수정 성공");
+            setNullData_Member();
+            tableRefresh_MemberTable();
+        } else {
+            JOptionPane.showMessageDialog(this, "회원정보 수정 실패");
+        }
+    }//GEN-LAST:event_Btn_Update_MemActionPerformed
+
+    //회비관리 회비입력 버튼 액션이벤트
+    private void Btn_Enter_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MfsActionPerformed
+        MfsDAO dao = new MfsDAO();
+        boolean ok = dao.insertMfs(getTfDataToMfs());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "입력 성공");
+            setNullData_Mfs();
+            tableRefresh_MfsTable();
+        } else {
+            JOptionPane.showMessageDialog(this, "입력 실패");
+        }
+    }//GEN-LAST:event_Btn_Enter_MfsActionPerformed
+
+    private void Btn_Update_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Update_MfsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Update_MfsActionPerformed
+
+    private void Btn_Delete_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Delete_MfsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Delete_MfsActionPerformed
+
+    //회비관리 초기화 버튼 액션리스너
+    private void Btn_Reset_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_MfsActionPerformed
+        setNullData_Mfs();
+    }//GEN-LAST:event_Btn_Reset_MfsActionPerformed
+
+    //-----------------컬럼 헤드 읽어와서 테이블 헤드생성
+    public Vector getColumn_MemberTable() {
+        // 멤버 테이블
+        Vector col = new Vector();
 
         for (int i = 0; i < MemberTable.getColumnCount(); i++) {
             col.add(MemberTable.getColumnName(i));
-
         }
         return col;
     }
 
     public Vector getColumn_MsfTable() {
+        // 회비관리 테이블
         Vector col = new Vector();
 
         for (int i = 0; i < MsfTable.getColumnCount(); i++) {
             col.add(MsfTable.getColumnName(i));
-
         }
-
         return col;
     }
+    // --------------------------------------------------
 
+    //------------- 테이블 새로고침-----------------------
     public void tableRefresh_MemberTable() {
-
+        // 멤버 테이블
         MemberDAO dao = new MemberDAO();
         DefaultTableModel model = new DefaultTableModel(dao.getMemberList(), getColumn_MemberTable());
         MemberTable.setModel(model);
-
     }
-    
-     public void tableRefresh_MsfTable() {
 
-        MemberDAO dao = new MemberDAO();
-        DefaultTableModel model = new DefaultTableModel(dao.getMemberList(), getColumn_MsfTable());
+    public void tableRefresh_MfsTable() {
+        // 회비관리 테이블
+        MfsDAO dao = new MfsDAO();
+        DefaultTableModel model = new DefaultTableModel(dao.getMfsList(), getColumn_MsfTable());
         MsfTable.setModel(model);
 
     }
+    //------------------------------------------------
 
     /**
      * @param args the command line arguments
@@ -844,7 +980,6 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Delete_Mem;
     private javax.swing.JButton Btn_Delete_Mfs;
-    private javax.swing.JButton Btn_Enter_Mem;
     private javax.swing.JButton Btn_Enter_Mfs;
     private javax.swing.JButton Btn_Reset_Mem;
     private javax.swing.JButton Btn_Reset_Mfs;
@@ -860,12 +995,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_EventManager;
     private javax.swing.JPanel Panel_MemberManager;
     private javax.swing.JPanel Panel_PayManager;
-    private javax.swing.JTextField TF_AllStudent;
+    public static javax.swing.JTextField TF_AllStudent;
     private javax.swing.JTextField TF_AverageMoney;
     private javax.swing.JTextField TF_EventDate;
     private javax.swing.JTextField TF_EventName;
-    private javax.swing.JTextField TF_NewStudent;
-    private javax.swing.JTextField TF_OldStudent;
+    public static javax.swing.JTextField TF_NewStudent;
+    public static javax.swing.JTextField TF_OldStudent;
     private javax.swing.JTextField TF_StudentId;
     private javax.swing.JTextField Tf_AllMoney;
     public static javax.swing.JTextField Tf_Date;
@@ -906,8 +1041,71 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 
+    //날짜입력부분에 날짜 세팅 메소드
+    //Frame_Calander 에서 사용 - 날자 세팅할때
     public static void setTf_Date(String str) {
         MainFrame.Tf_Date.setText(str);
     }
 
+    //---------------------텍스트필드 내용을  dto에 저장
+    public MemberDTO getTfDataToMember() {
+        // MemberDTO
+        MemberDTO dto = new MemberDTO();
+
+        String id = TF_StudentId.getText();
+        String department = Tf_Department.getText();
+        String name = Tf_Name_Mem.getText();
+        String phone = Tf_Phone.getText();
+
+        dto.setStudent_id(Integer.parseInt(id));
+        dto.setDepartment(department);
+        dto.setName(name);
+        dto.setPhone(phone);
+
+        return dto;
+    }
+
+    public MfsDTO getTfDataToMfs() {
+        // MemberDTO
+        MfsDTO dto = new MfsDTO();
+
+        String mydate = Tf_Date.getText();
+        String membername = Tf_Name.getText();
+        String memo = Tf_Event.getText();
+        String price = Tf_Price.getText();
+        String payment = Tf_Payment.getText();
+        String notpayment = Integer.toString(Integer.parseInt(price) - Integer.parseInt(payment));
+        String remarks = Tf_Remarks.getText();
+
+        dto.setMydate(mydate);
+        dto.setMemberName(membername);
+        dto.setMemo(memo);
+        dto.setPrice(Integer.parseInt(price));
+        dto.setPaymoney(Integer.parseInt(payment));
+        dto.setNotpaymoney(Integer.parseInt(notpayment));
+        dto.setRemarks(remarks);
+
+        return dto;
+    }
+
+    //------------------------------------------------------
+    //-------------------------텍스트필드 초기화
+    public void setNullData_Member() {
+        //회원목록
+        TF_StudentId.setText("숫자입력");
+        Tf_Department.setText("");
+        Tf_Name_Mem.setText("");
+        Tf_Phone.setText("");
+    }
+
+    public void setNullData_Mfs() {
+        //회비목록
+        Tf_Date.setText("");
+        Tf_Name.setText("");
+        Tf_Event.setText("");
+        Tf_Price.setText("");
+        Tf_Payment.setText("");
+        Tf_Remarks.setText("");
+    }
+    //---------------------------------------------
 }

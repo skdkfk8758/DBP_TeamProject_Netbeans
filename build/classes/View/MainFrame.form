@@ -180,7 +180,10 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel1" min="-2" pref="29" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Component id="Tf_Event" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel3" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
@@ -203,13 +206,9 @@
                                           <Component id="Tf_Remarks" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Tf_Date" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="FrameCall_Calander" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Tf_Event" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Tf_Date" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FrameCall_Calander" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -396,21 +395,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc785;&#xb825;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Enter_MfsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Reset_Mfs">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xcd08;&#xae30;&#xd654;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Reset_MfsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Update_Mfs">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Update_MfsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Delete_Mfs">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Delete_MfsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
@@ -644,6 +655,9 @@
                       <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MemberTableMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -654,7 +668,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="TF_StudentId">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd559;&#xbc88;&#xc785;&#xb825;"/>
+                <Property name="text" type="java.lang.String" value="&#xc22b;&#xc790;&#xc785;&#xb825;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_StudentIdActionPerformed"/>
@@ -666,9 +680,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Department">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd559;&#xacfc;&#xc785;&#xb825;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_DepartmentActionPerformed"/>
               </Events>
@@ -679,9 +690,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Name_Mem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xc774;&#xb984;&#xc785;&#xb825;"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
@@ -689,9 +697,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Phone">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xc804;&#xd654;&#xbc88;&#xd638;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_PhoneActionPerformed"/>
               </Events>
@@ -700,21 +705,37 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc785;&#xb825;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Enter_MemActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Update_Mem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Update_MemActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Delete_Mem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Delete_MemActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn_Reset_Mem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xcd08;&#xae30;&#xd654;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Reset_MemActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
@@ -724,20 +745,24 @@
             <Component class="javax.swing.JTextField" name="TF_OldStudent">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xc7ac;&#xd559;&#xc0dd; &#xc778;&#xc6d0;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_OldStudentActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="TF_NewStudent">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xc2e0;&#xc785;&#xc0dd; &#xc778;&#xc6d0;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_NewStudentActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
@@ -747,11 +772,13 @@
             <Component class="javax.swing.JTextField" name="TF_AllStudent">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xcd1d;&#xc778;&#xc6d0;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_AllStudentActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>

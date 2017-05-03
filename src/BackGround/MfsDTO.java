@@ -12,7 +12,7 @@ package BackGround;
 public class MfsDTO {
 
     private int price, paymoney, notpaymoney;
-    private String mydate, name, memo, remarks;
+    private String mydate, membername, memo, remarks;
 
     public int getPrice() {
         return price;
@@ -46,12 +46,12 @@ public class MfsDTO {
         this.mydate = mydate;
     }
 
-    public String getName() {
-        return name;
+    public String getMemberName() {
+        return membername;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMemberName(String membername) {
+        this.membername = membername;
     }
 
     public String getMemo() {

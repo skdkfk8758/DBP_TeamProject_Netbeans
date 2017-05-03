@@ -29,7 +29,7 @@ public class DB_Handler {
         }
     }
 
-    //디비 접속을 위한 변수선
+    //디비 접속을 위한 변수선언
     private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static String url = "jdbc:oracle:thin:@25.11.88.29:1521:xe";
     private static String user = "test1";
@@ -45,7 +45,7 @@ public class DB_Handler {
         }
     }
 
-    //sql 커넥션 얻어오는 메소드
+    //DB 커넥션 얻어오는 메소드
     public static Connection getConnection() {
 
         Connection connection = null;
