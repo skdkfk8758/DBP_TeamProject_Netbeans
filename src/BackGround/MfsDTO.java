@@ -11,8 +11,24 @@ package BackGround;
  */
 public class MfsDTO {
 
-    private int price, paymoney, notpaymoney;
+    private int price, paymoney, notpaymoney, index_num;
     private String mydate, membername, memo, remarks;
+
+    public int getIndex_num() {
+        return index_num;
+    }
+
+    public void setIndex_num(int index_num) {
+        this.index_num = index_num;
+    }
+
+    public String getMembername() {
+        return membername;
+    }
+
+    public void setMembername(String membername) {
+        this.membername = membername;
+    }
 
     public int getPrice() {
         return price;
@@ -44,14 +60,6 @@ public class MfsDTO {
 
     public void setMydate(String mydate) {
         this.mydate = mydate;
-    }
-
-    public String getMemberName() {
-        return membername;
-    }
-
-    public void setMemberName(String membername) {
-        this.membername = membername;
     }
 
     public String getMemo() {

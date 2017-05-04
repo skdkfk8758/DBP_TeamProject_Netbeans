@@ -173,7 +173,7 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
         JScrollPane CalScrollPane = MakeCalScrollPane(flag);
 
         Month = Integer.toString(cal.get(Calendar.MONTH) + 1);
-        MonthName = new JButton(cal.get(Calendar.YEAR) + "년 " + Month + "월 ");
+        MonthName = new JButton(cal.get(Calendar.YEAR) + " . " + Month);
 
         addMouseListener(this);
         add(MonthName, BorderLayout.NORTH);
@@ -183,7 +183,7 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
         p.add(Btn_Enter);
         add(p, BorderLayout.SOUTH);
 
-        setBounds(710,0,0,0);
+        setBounds(1110,0,0,0);
         setVisible(true);
         pack();
     }
@@ -195,7 +195,7 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
         int rowIndex = calTable.getSelectedRow();
         int colIndex = calTable.getSelectedColumn();
         String mydate = MonthName.getText();
-        DATE = mydate + calTable.getValueAt(rowIndex, colIndex) + "일";
+        DATE = mydate +  " . " + calTable.getValueAt(rowIndex, colIndex);
         MainFrame.setTf_Date(DATE);
     }
 

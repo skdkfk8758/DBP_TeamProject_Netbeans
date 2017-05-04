@@ -66,8 +66,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" min="-2" pref="562" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" pref="741" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -98,50 +98,60 @@
                                       <Component id="FrameCall_Calander" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Tf_Index" pref="177" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Tf_NotPaymoney" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Tf_PresentMoney" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Tf_AllMoney" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CB_Sort" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="Btn_Enter_Mfs" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Btn_Update_Mfs" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Btn_Delete_Mfs" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Btn_Reset_Mfs" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Component id="Btn_Enter_Mfs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Btn_Update_Mfs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Btn_Delete_Mfs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Btn_Reset_Mfs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Tf_NotPaymoney" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Tf_PresentMoney" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Tf_AllMoney" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="Label_SearchMember_Mfs" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NotPaymentAll_Mfs" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Tf_NotPayMoney_Mfs" pref="137" max="32767" attributes="0"/>
+                                      <Component id="Tf_SearchMember_Mfs" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Btn_TableRefrash_Mfs" max="32767" attributes="0"/>
+                                      <Component id="Btn_SearchMember_Mfs" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="836" max="32767" attributes="0"/>
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -165,15 +175,17 @@
                                   <Component id="jLabel19" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="Tf_NotPaymoney" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel20" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="CB_Sort" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Label_SearchMember_Mfs" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="Tf_SearchMember_Mfs" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Btn_SearchMember_Mfs" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="14" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel11" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="Tf_Index" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Tf_NotPayMoney_Mfs" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NotPaymentAll_Mfs" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="Btn_TableRefrash_Mfs" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -219,9 +231,16 @@
                                   <Component id="Btn_Delete_Mfs" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane4" pref="531" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                          <Component id="jLabel13" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace pref="376" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -269,41 +288,26 @@
               </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Price">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd589;&#xc0ac; &#xae08;&#xc561;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_PriceActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Event">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd589;&#xc0ac; &#xc785;&#xb825;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_EventActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Name">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd559;&#xc0dd; &#xc774;&#xb984;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_NameActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Payment">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xb0a9;&#xbd80; &#xae08;&#xc561;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_PaymentActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Tf_Remarks">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xbe44;&#xace0;"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_RemarksActionPerformed"/>
               </Events>
@@ -318,8 +322,7 @@
                 <Component class="javax.swing.JTable" name="MsfTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="0">
-                        <Column editable="false" title="Index" type="java.lang.Object"/>
+                      <Table columnCount="7" rowCount="0">
                         <Column editable="false" title="&#xb0a0;&#xc9dc;" type="java.lang.Object"/>
                         <Column editable="false" title="&#xc774;&#xb984;" type="java.lang.Object"/>
                         <Column editable="false" title="&#xd589;&#xc0ac;" type="java.lang.Object"/>
@@ -366,17 +369,15 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                       </TableColumnModel>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MsfTableMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="MsfTable.getTableHeader().setReorderingAllowed(false);&#xa;MsfTable.getTableHeader().setResizingAllowed(false);"/>
                   </AuxValues>
@@ -423,18 +424,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Delete_MfsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="Label_SearchMember_Mfs">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#xbc88;      &#xd638;"/>
+                <Property name="text" type="java.lang.String" value="&#xd68c;&#xc6d0;&#xac80;&#xc0c9;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Tf_Index">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xc778;&#xb371;&#xc2a4; &#xbc88;&#xd638;"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="Tf_SearchMember_Mfs">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_IndexActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_SearchMember_MfsActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="FrameCall_Member">
@@ -450,7 +447,6 @@
             <Component class="javax.swing.JTextField" name="Tf_AllMoney">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xc804;&#xccb4;&#xc794;&#xc561;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_AllMoneyActionPerformed"/>
@@ -464,7 +460,6 @@
             <Component class="javax.swing.JTextField" name="Tf_PresentMoney">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xd604;&#xc7ac;&#xc794;&#xc561;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_PresentMoneyActionPerformed"/>
@@ -478,34 +473,44 @@
             <Component class="javax.swing.JTextField" name="Tf_NotPaymoney">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xbbf8;&#xb0a9;&#xcd1d;&#xc561;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_NotPaymoneyActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
+            <Component class="javax.swing.JLabel" name="jLabel13">
+            </Component>
+            <Component class="javax.swing.JLabel" name="NotPaymentAll_Mfs">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#xc815;&#xb82c;&#xbc29;&#xbc95;"/>
+                <Property name="text" type="java.lang.String" value="&#xbbf8;&#xb0a9;&#xcd1d;&#xc561;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CB_Sort">
+            <Component class="javax.swing.JTextField" name="Tf_NotPayMoney_Mfs">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
+                <Property name="editable" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_SortActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_NotPayMoney_MfsActionPerformed"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="Btn_SearchMember_Mfs">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xac80;&#xc0c9;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_SearchMember_MfsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="Btn_TableRefrash_Mfs">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc0c8;&#xb85c;&#xace0;&#xce68;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_TableRefrash_MfsActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -523,8 +528,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="755" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Btn_Enter_Mem" min="-2" max="-2" attributes="0"/>
@@ -546,17 +551,6 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="TF_StudentId" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Tf_Phone" max="32767" attributes="0"/>
-                                      <Component id="Tf_Name_Mem" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
@@ -573,8 +567,19 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="TF_AllStudent" min="-2" pref="131" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Tf_Phone" max="32767" attributes="0"/>
+                                  <Component id="Tf_Name_Mem" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -586,7 +591,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace pref="79" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="TF_OldStudent" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -801,8 +806,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="751" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
@@ -820,7 +825,7 @@
                               <Component id="TF_AverageMoney" min="-2" pref="141" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="174" max="32767" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -828,7 +833,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="531" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="545" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
