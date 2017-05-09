@@ -223,6 +223,11 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         FrameCall_Member.setText("회원");
+        FrameCall_Member.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FrameCall_MemberActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("전체잔액");
 
@@ -979,6 +984,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         tableRefresh_MfsTable(dao_mfs.getMfsList());
     }//GEN-LAST:event_Btn_TableRefrash_MfsActionPerformed
+    
+    //회원버튼 이벤트
+    private void FrameCall_MemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_MemberActionPerformed
+        
+        new Frame_Member();
+        
+    }//GEN-LAST:event_FrameCall_MemberActionPerformed
 
     //-----------------컬럼 헤드 읽어와서 테이블 헤드생성--------
     public Vector getColumn_MemberTable() {
@@ -1141,17 +1153,19 @@ public class MainFrame extends javax.swing.JFrame {
         String department = Tf_Department.getText();
         String name = Tf_Name_Mem.getText();
         String phone = Tf_Phone.getText();
+        String year = TF_StudentId.getText().substring(0,4);
 
         dto.setStudent_id(Integer.parseInt(id));
         dto.setDepartment(department);
         dto.setName(name);
         dto.setPhone(phone);
+        dto.setYear(Integer.parseInt(year));
 
         return dto;
     }
 
     public MfsDTO getTfDataToMfs() {
-        // MemberDTO
+        // MfsDTO
         MfsDTO dto = new MfsDTO();
 
         String mydate = Tf_Date.getText();

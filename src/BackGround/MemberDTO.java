@@ -11,8 +11,16 @@ package BackGround;
  */
 public class MemberDTO {
 
-    private int Student_id;
+    private int Student_id, year;
     private String name, department, phone;
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 
     public int getStudent_id() {
         return Student_id;

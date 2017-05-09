@@ -23,26 +23,26 @@ public class MfsDAO {
         try {
             con = dB_Handler.getConnection();
 
-            String sql = "SELECT * FROM mfs ORDER BY mydate";
+            String sql = "SELECT * FROM dbp_team_mfs ORDER BY mfs_date";
 
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
 
-                String Mydate = rs.getString(1);
+                String date = rs.getString(1);
                 String MemberName = rs.getString(2);
-                String Memo = rs.getString(3);
-                int Price = rs.getInt(4);
-                int Payment = rs.getInt(5);
-                int Notpayment = rs.getInt(6);
-                String Remarks = rs.getString(7);
+                String evnet = rs.getString(3);
+                String Remarks = rs.getString(4);
+                int Price = rs.getInt(5);
+                int Payment = rs.getInt(6);
+                int Notpayment = rs.getInt(7);
 
                 Vector row = new Vector();
 
-                row.add(Mydate);
+                row.add(date);
                 row.add(MemberName);
-                row.add(Memo);
+                row.add(evnet);
                 row.add(Price);
                 row.add(Payment);
                 row.add(Notpayment);
@@ -50,7 +50,7 @@ public class MfsDAO {
 
                 data.add(row);
             }
-
+ 
         } catch (Exception e) {
             e.getMessage();
         } finally {
@@ -60,7 +60,7 @@ public class MfsDAO {
         return data;
     }
 
-     //회원별 회비 리스트 가져오는 메소드
+    //회원별 회비 리스트 가져오는 메소드
     public Vector getMfsListByMember(String name) {
 
         Vector data = new Vector();
@@ -70,18 +70,18 @@ public class MfsDAO {
         PreparedStatement pstmt2 = null;
         ResultSet rs = null;
         ResultSet rs2 = null;
-        
+
         int notpaymoney = 0;
 
         try {
             con = dB_Handler.getConnection();
 
-            String sql = "SELECT * FROM mfs WHERE membername = ? ORDER BY mydate";
-            
+            String sql = "SELECT * FROM dbp_team_mfs WHERE mfs_name = ? ORDER BY mfs_date";
+
             pstmt = con.prepareStatement(sql);
-            
+
             pstmt.setString(1, name);
-            
+
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -95,7 +95,7 @@ public class MfsDAO {
                 String Remarks = rs.getString(7);
 
                 notpaymoney = notpaymoney + Notpayment;
-                
+
                 Vector row = new Vector();
 
                 row.add(Mydate);
@@ -110,7 +110,7 @@ public class MfsDAO {
             }
 
             MainFrame.Tf_NotPayMoney_Mfs.setText(Integer.toString(notpaymoney));
-            
+
         } catch (Exception e) {
             e.getMessage();
         } finally {
@@ -119,22 +119,22 @@ public class MfsDAO {
 
         return data;
     }
-   
+
     //회비 잔고계산을 위한 메소드
     public Vector getMfsSelectMoney() {
 
         Vector data = new Vector();
-
-        int allmoney = 0, notpaymoney = 0, currentmonry = 0;
 
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
         try {
+            int allmoney = 0, notpaymoney = 0, currentmonry = 0;
+
             con = dB_Handler.getConnection();
 
-            String sql = "SELECT payment, notpayment FROM mfs";
+            String sql = "SELECT mfs_pay, mfs_notpay FROM dbp_team_mfs";
 
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
@@ -147,9 +147,9 @@ public class MfsDAO {
                 allmoney = currentmonry + notpaymoney;
             }
 
-            data.add(allmoney);
-            data.add(currentmonry);
-            data.add(notpaymoney);
+            data.add(0);
+            data.add(0);
+            data.add(0);
 
         } catch (Exception e) {
             e.getMessage();
@@ -171,7 +171,7 @@ public class MfsDAO {
         try {
             con = dB_Handler.getConnection();
 
-            String sql = "INSERT INTO mfs VALUES(?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO dbp_team_mfs VALUES(?,?,?,?,?,?,?)";
             pstmt = con.prepareStatement(sql);
 
             pstmt.setString(1, dto.getMydate());
@@ -209,7 +209,7 @@ public class MfsDAO {
             con = dB_Handler.getConnection();
 
             //학번으로 검색하여 삭제
-            String sql = "DELETE FROM mfs WHERE mydate = ? and memo = ?";
+            String sql = "DELETE FROM dbp_team_mfs WHERE mfs_date = ? and mfs_event = ?";
             pstmt = con.prepareStatement(sql);
 
             pstmt.setString(1, dto.getMydate());
@@ -242,7 +242,7 @@ public class MfsDAO {
             con = dB_Handler.getConnection();
 
             //날짜와 행사이름을 가지고 납부금액 수정
-            String sql = "UPDATE mfs set payment = ?, notpayment = ?, remarks = ? WHERE mydate = ? and memo = ?";
+            String sql = "UPDATE dbp_team_mfs set mfs_pay = ?, mfs_notpay = ?, mfs_remarks = ? WHERE mfs_date = ? and mfs_event = ?";
             pstmt = con.prepareStatement(sql);
 
             int notpayment = dto.getPrice() - dto.getPaymoney();

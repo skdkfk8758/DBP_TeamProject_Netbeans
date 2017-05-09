@@ -30,11 +30,18 @@ public class DB_Handler {
     }
 
     //디비 접속을 위한 변수선언
-    private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private static String url = "jdbc:oracle:thin:@25.11.88.29:1521:xe";
-    private static String user = "test1";
-    private static String password = "test1";
-
+//    private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
+//    private static String url = "jdbc:oracle:thin:@25.11.88.29:1522:orcl";
+//    private static String url = "jdbc:oracle:thin:@127.0.0.1:1522:orcl";
+//    private static String user = "dbpadmin";
+//    private static String password = "admin123";
+    
+    private static String DRIVER = "com.mysql.jdbc.Driver";
+    private static String url = "jdbc:mysql://25.11.88.29:3306/dbp";
+//    private static String url = "jdbc:mysql://127.0.0.1:3306/dbp";
+    private static String user = "dbpadmin";
+    private static String password = "admin123";
+    
     static {
         try {
             Class.forName(DRIVER);
@@ -56,7 +63,7 @@ public class DB_Handler {
 
         } catch (Exception e) {
             // TODO: handle exception
-            e.getMessage();
+            e.getStackTrace();
         }
 
         return connection;

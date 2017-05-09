@@ -46,7 +46,7 @@ public class MemberDAO {
             con = dB_Handler.getConnection();
 
             // 학번순으로 오름차순 정렬
-            String sql = "SELECT * FROM member ORDER BY student_id";
+            String sql = "SELECT * FROM dbp_team_member ORDER BY member_id";
 
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
@@ -101,19 +101,19 @@ public class MemberDAO {
         try {
             con = dB_Handler.getConnection();
 
-            String sql = "INSERT INTO member VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO dbp_team_member VALUES(?,?,?,?,?)";
             pstmt = con.prepareStatement(sql);
 
             //신입생, 재학생 구분을 위한 현재날짜 얻어오는 부분
             Date date = new Date();
-            SimpleDateFormat year_SDF = new SimpleDateFormat("yyyy", Locale.KOREA);
-            String year = year_SDF.format(date);
+//            SimpleDateFormat year_SDF = new SimpleDateFormat("yyyy", Locale.KOREA);
+//            String year = year_SDF.format(date);
 
             pstmt.setInt(1, dto.getStudent_id());
             pstmt.setString(2, dto.getDepartment());
             pstmt.setString(3, dto.getName());
             pstmt.setString(4, dto.getPhone());
-            pstmt.setString(5, year);
+            pstmt.setInt(5, dto.getYear());
 
             int result = pstmt.executeUpdate();
 
@@ -142,7 +142,7 @@ public class MemberDAO {
             con = dB_Handler.getConnection();
 
             //학번으로 검색하여 삭제
-            String sql = "DELETE FROM member WHERE student_id = ?";
+            String sql = "DELETE FROM dbp_team_member WHERE member_id = ?";
             pstmt = con.prepareStatement(sql);
 
             pstmt.setInt(1, dto.getStudent_id());
@@ -174,7 +174,7 @@ public class MemberDAO {
             con = dB_Handler.getConnection();
 
             //학번을 가지고 나머지 데이터 수정
-            String sql = "UPDATE member set department = ?, name = ?, phone = ? WHERE student_id = ?";
+            String sql = "UPDATE dbp_team_member set member_department = ?, member_name = ?, member_phone = ? WHERE member_id = ?";
             pstmt = con.prepareStatement(sql);
 
             pstmt.setString(1, dto.getDepartment());
