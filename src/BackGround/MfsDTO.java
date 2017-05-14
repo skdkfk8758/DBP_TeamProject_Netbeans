@@ -1,14 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    회비데이터에 접근하기위한 데이터 객체들
  */
 package BackGround;
 
-/**
- *
- * @author xkdlr
- */
 public class MfsDTO {
 
     private int price, paymoney, notpaymoney;

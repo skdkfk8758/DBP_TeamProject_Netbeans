@@ -1,10 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    회비관리 프로그램 메인 프레임
+*/
+
+
 package View;
 
+import BackGround.EventManagerDAO;
 import BackGround.MemberDAO;
 import BackGround.MemberDTO;
 import BackGround.MfsDAO;
@@ -16,17 +17,15 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import jdk.nashorn.internal.runtime.regexp.joni.constants.StackType;
 
-/**
- *
- * @author CarpDm
- */
 public class MainFrame extends javax.swing.JFrame {
 
     MfsDAO dao_mfs = new MfsDAO();
     MemberDAO dao_member = new MemberDAO();
+    EventManagerDAO dao_eventmanager = new EventManagerDAO();
 
     public MainFrame() {
         initComponents();
+        tableRefresh_EventTable();
         tableRefresh_MemberTable();
         tableRefresh_MfsTable(dao_mfs.getMfsList());
     }
@@ -58,7 +57,6 @@ public class MainFrame extends javax.swing.JFrame {
         Btn_Delete_Mfs = new javax.swing.JButton();
         Label_SearchMember_Mfs = new javax.swing.JLabel();
         Tf_SearchMember_Mfs = new javax.swing.JTextField();
-        FrameCall_Member = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         Tf_AllMoney = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -94,12 +92,6 @@ public class MainFrame extends javax.swing.JFrame {
         Panel_EventManager = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         EventTable = new javax.swing.JTable();
-        jLabel24 = new javax.swing.JLabel();
-        TF_EventDate = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        TF_EventName = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        TF_AverageMoney = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,13 +214,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        FrameCall_Member.setText("회원");
-        FrameCall_Member.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrameCall_MemberActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("전체잔액");
 
         Tf_AllMoney.setEditable(false);
@@ -305,8 +290,7 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addComponent(Tf_Name, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Tf_Price, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Tf_Event))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FrameCall_Member))
+                                .addGap(64, 64, 64))
                             .addGroup(Panel_PayManagerLayout.createSequentialGroup()
                                 .addComponent(Tf_Date)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -395,8 +379,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Tf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FrameCall_Member))
+                                    .addComponent(Tf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(Panel_PayManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -432,7 +415,7 @@ public class MainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "학번", "학과", "이름", "전화번호"
+                "학번", "이름", "학과", "전화번호"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -648,36 +631,6 @@ public class MainFrame extends javax.swing.JFrame {
         EventTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(EventTable);
 
-        jLabel24.setText("날      짜");
-
-        TF_EventDate.setEditable(false);
-        TF_EventDate.setText("행사 날짜");
-        TF_EventDate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF_EventDateActionPerformed(evt);
-            }
-        });
-
-        jLabel25.setText("행      사");
-
-        TF_EventName.setEditable(false);
-        TF_EventName.setText("행사 이름");
-        TF_EventName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF_EventNameActionPerformed(evt);
-            }
-        });
-
-        jLabel26.setText("평균회비 ");
-
-        TF_AverageMoney.setEditable(false);
-        TF_AverageMoney.setText("1인당 평균회비");
-        TF_AverageMoney.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF_AverageMoneyActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout Panel_EventManagerLayout = new javax.swing.GroupLayout(Panel_EventManager);
         Panel_EventManager.setLayout(Panel_EventManagerLayout);
         Panel_EventManagerLayout.setHorizontalGroup(
@@ -685,21 +638,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(Panel_EventManagerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TF_EventDate, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TF_EventName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TF_AverageMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         Panel_EventManagerLayout.setVerticalGroup(
             Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -707,20 +646,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(Panel_EventManagerLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_EventDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_EventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_EventManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_AverageMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         JTabbedPane.addTab("행사관리", Panel_EventManager);
@@ -748,119 +673,22 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Tf_EventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_EventActionPerformed
+    private void TF_AllStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_AllStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_EventActionPerformed
-
-    private void Tf_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_NameActionPerformed
-
-    private void Tf_PaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PaymentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_PaymentActionPerformed
-
-    private void Tf_RemarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_RemarksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_RemarksActionPerformed
-
-    private void Tf_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_DateActionPerformed
-
-    private void TF_StudentIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_StudentIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TF_StudentIdActionPerformed
-
-    private void Tf_DepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DepartmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_DepartmentActionPerformed
-
-    private void Tf_PhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_PhoneActionPerformed
-
-    private void Tf_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_PriceActionPerformed
-
-    //달력 프레임 호출
-    private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
-
-        new Frame_Calander(0);
-    }//GEN-LAST:event_FrameCall_CalanderActionPerformed
-
-    private void Tf_SearchMember_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_SearchMember_MfsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_SearchMember_MfsActionPerformed
-
-    private void Tf_AllMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_AllMoneyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_AllMoneyActionPerformed
-
-    private void Tf_PresentMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PresentMoneyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_PresentMoneyActionPerformed
-
-    private void Tf_NotPaymoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotPaymoneyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_NotPaymoneyActionPerformed
-
-    private void TF_OldStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_OldStudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TF_OldStudentActionPerformed
+    }//GEN-LAST:event_TF_AllStudentActionPerformed
 
     private void TF_NewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_NewStudentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TF_NewStudentActionPerformed
 
-    private void TF_AllStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_AllStudentActionPerformed
+    private void TF_OldStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_OldStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TF_AllStudentActionPerformed
+    }//GEN-LAST:event_TF_OldStudentActionPerformed
 
-    private void TF_EventDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_EventDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TF_EventDateActionPerformed
-
-    private void TF_EventNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_EventNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TF_EventNameActionPerformed
-
-    private void TF_AverageMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_AverageMoneyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TF_AverageMoneyActionPerformed
-
-    // 회원목록 입력버튼 액션이벤트
-    private void Btn_Enter_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MemActionPerformed
-
-        MemberDAO dao = new MemberDAO();
-        boolean ok = dao.insertMember(getTfDataToMember());
-
-        if (ok) {
-            JOptionPane.showMessageDialog(this, "회원 추가 성공");
-            setNullData_Member();
-            tableRefresh_MemberTable();
-        } else {
-            JOptionPane.showMessageDialog(this, "회원 추가 실패");
-        }
-
-    }//GEN-LAST:event_Btn_Enter_MemActionPerformed
-
-    //-------------테이블 클릭시 회원 정보 세팅 이벤트
-    private void MemberTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberTableMouseClicked
-
-        int r = MemberTable.getSelectedRow();
-        String id = Integer.toString((int) MemberTable.getValueAt(r, 0));
-        String department = (String) MemberTable.getValueAt(r, 1);
-        String name_Mem = (String) MemberTable.getValueAt(r, 2);
-        String phone = (String) MemberTable.getValueAt(r, 3);
-
-        TF_StudentId.setText(id);
-        Tf_Department.setText(department);
-        Tf_Name_Mem.setText(name_Mem);
-        Tf_Phone.setText(phone);
-
-    }//GEN-LAST:event_MemberTableMouseClicked
+    //회원목록 초기화 버튼 액션이벤트
+    private void Btn_Reset_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_MemActionPerformed
+        setNullData_Member();
+    }//GEN-LAST:event_Btn_Reset_MemActionPerformed
 
     //회원목록 삭제버튼 액션이벤트
     private void Btn_Delete_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Delete_MemActionPerformed
@@ -877,12 +705,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Btn_Delete_MemActionPerformed
 
-    //회원목록 초기화 버튼 액션이벤트
-    private void Btn_Reset_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_MemActionPerformed
-
-        setNullData_Member();
-    }//GEN-LAST:event_Btn_Reset_MemActionPerformed
-
     //회원정보 수정 버튼 액션이벤트
     private void Btn_Update_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Update_MemActionPerformed
         MemberDAO dao = new MemberDAO();
@@ -897,35 +719,81 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Btn_Update_MemActionPerformed
 
-    //회비관리 회비입력 버튼 액션이벤트
-    private void Btn_Enter_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MfsActionPerformed
-        MfsDAO dao = new MfsDAO();
-        boolean ok = dao.insertMfs(getTfDataToMfs());
+    // 회원목록 입력버튼 액션이벤트
+    private void Btn_Enter_MemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MemActionPerformed
 
+        MemberDAO dao = new MemberDAO();
+        boolean ok = dao.insertMember(getTfDataToMember());
         if (ok) {
-            JOptionPane.showMessageDialog(this, "입력 성공");
-            setNullData_Mfs();
-            tableRefresh_MfsTable(dao.getMfsList());
+
+            JOptionPane.showMessageDialog(this, "회원 추가 성공");
+            setNullData_Member();
+            tableRefresh_MemberTable();
         } else {
-            JOptionPane.showMessageDialog(this, "입력 실패");
+            JOptionPane.showMessageDialog(this, "회원 추가 실패");
         }
-    }//GEN-LAST:event_Btn_Enter_MfsActionPerformed
+    }//GEN-LAST:event_Btn_Enter_MemActionPerformed
 
-    //회비관리 내용 수정 액션
-    private void Btn_Update_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Update_MfsActionPerformed
+    private void Tf_PhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_PhoneActionPerformed
 
-        MfsDAO dao = new MfsDAO();
-        boolean ok = dao.updateMfs(getTfDataToMfs());
+    private void Tf_DepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DepartmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_DepartmentActionPerformed
 
-        if (ok) {
-            JOptionPane.showMessageDialog(this, "회비내용 수정 성공");
-            setNullData_Mfs();
-            tableRefresh_MfsTable(dao.getMfsList());
-        } else {
-            JOptionPane.showMessageDialog(this, "회비내용 수정 실패");
-        }
+    private void TF_StudentIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_StudentIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TF_StudentIdActionPerformed
 
-    }//GEN-LAST:event_Btn_Update_MfsActionPerformed
+    //-------------테이블 클릭시 회원 정보 세팅 이벤트
+    private void MemberTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberTableMouseClicked
+
+        int r = MemberTable.getSelectedRow();
+        String id = Integer.toString((int) MemberTable.getValueAt(r, 0));
+        String department = (String) MemberTable.getValueAt(r, 1);
+        String name_Mem = (String) MemberTable.getValueAt(r, 2);
+        String phone = (String) MemberTable.getValueAt(r, 3);
+
+        TF_StudentId.setText(id);
+        Tf_Department.setText(department);
+        Tf_Name_Mem.setText(name_Mem);
+        Tf_Phone.setText(phone);
+    }//GEN-LAST:event_MemberTableMouseClicked
+
+    //새로고침 버튼 이벤트
+    private void Btn_TableRefrash_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_TableRefrash_MfsActionPerformed
+
+        tableRefresh_MfsTable(dao_mfs.getMfsList());
+        Tf_NotPayMoney_Mfs.setText("");
+        Tf_SearchMember_Mfs.setText("");
+    }//GEN-LAST:event_Btn_TableRefrash_MfsActionPerformed
+
+    //회원 이름으로 검색하는 버튼 이벤트
+    private void Btn_SearchMember_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SearchMember_MfsActionPerformed
+
+        tableRefresh_MfsTable(dao_mfs.getMfsListByMember(Tf_SearchMember_Mfs.getText()));
+    }//GEN-LAST:event_Btn_SearchMember_MfsActionPerformed
+
+    private void Tf_NotPayMoney_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotPayMoney_MfsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_NotPayMoney_MfsActionPerformed
+
+    private void Tf_NotPaymoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotPaymoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_NotPaymoneyActionPerformed
+
+    private void Tf_PresentMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PresentMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_PresentMoneyActionPerformed
+
+    private void Tf_AllMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_AllMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_AllMoneyActionPerformed
+
+    private void Tf_SearchMember_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_SearchMember_MfsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_SearchMember_MfsActionPerformed
 
     //회비관리 내용삭제 버튼 액션
     private void Btn_Delete_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Delete_MfsActionPerformed
@@ -940,17 +808,48 @@ public class MainFrame extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "회비내용 삭제 실패");
         }
-
     }//GEN-LAST:event_Btn_Delete_MfsActionPerformed
+
+    //회비관리 내용 수정 액션
+    private void Btn_Update_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Update_MfsActionPerformed
+
+        MfsDAO dao = new MfsDAO();
+        boolean ok = dao.updateMfs(getTfDataToMfs());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "회비내용 수정 성공");
+            setNullData_Mfs();
+            tableRefresh_MfsTable(dao.getMfsList());
+        } else {
+            JOptionPane.showMessageDialog(this, "회비내용 수정 실패");
+        }
+    }//GEN-LAST:event_Btn_Update_MfsActionPerformed
 
     //회비관리 초기화 버튼 액션리스너
     private void Btn_Reset_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Reset_MfsActionPerformed
         setNullData_Mfs();
     }//GEN-LAST:event_Btn_Reset_MfsActionPerformed
 
-    private void Tf_NotPayMoney_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NotPayMoney_MfsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Tf_NotPayMoney_MfsActionPerformed
+    //회비관리 회비입력 버튼 액션이벤트
+    private void Btn_Enter_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Enter_MfsActionPerformed
+        MfsDAO dao = new MfsDAO();
+
+        boolean ok = dao.insertMfs(getTfDataToMfs());
+
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "입력 성공");
+            setNullData_Mfs();
+            tableRefresh_MfsTable(dao.getMfsList());
+        } else {
+            JOptionPane.showMessageDialog(this, "입력 실패");
+        }
+    }//GEN-LAST:event_Btn_Enter_MfsActionPerformed
+
+    //달력 프레임 호출
+    private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
+
+        new Frame_Calander(0);
+    }//GEN-LAST:event_FrameCall_CalanderActionPerformed
 
     // 회비관리 마우스 클릭 이벤트
     private void MsfTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MsfTableMouseClicked
@@ -972,27 +871,41 @@ public class MainFrame extends javax.swing.JFrame {
         Tf_Remarks.setText(remarks);
     }//GEN-LAST:event_MsfTableMouseClicked
 
-    //회원 이름으로 검색하는 버튼 이벤트
-    private void Btn_SearchMember_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SearchMember_MfsActionPerformed
+    private void Tf_RemarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_RemarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_RemarksActionPerformed
 
-        tableRefresh_MfsTable(dao_mfs.getMfsListByMember(Tf_SearchMember_Mfs.getText()));
+    private void Tf_PaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PaymentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_PaymentActionPerformed
 
-    }//GEN-LAST:event_Btn_SearchMember_MfsActionPerformed
+    private void Tf_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_NameActionPerformed
 
-    //새로고침 버튼 이벤트
-    private void Btn_TableRefrash_MfsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_TableRefrash_MfsActionPerformed
+    private void Tf_EventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_EventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_EventActionPerformed
 
-        tableRefresh_MfsTable(dao_mfs.getMfsList());
-    }//GEN-LAST:event_Btn_TableRefrash_MfsActionPerformed
-    
-    //회원버튼 이벤트
-    private void FrameCall_MemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_MemberActionPerformed
-        
-        new Frame_Member();
-        
-    }//GEN-LAST:event_FrameCall_MemberActionPerformed
+    private void Tf_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_PriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_PriceActionPerformed
+
+    private void Tf_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tf_DateActionPerformed
 
     //-----------------컬럼 헤드 읽어와서 테이블 헤드생성--------
+     public Vector getColumn_EventTable() {
+        // 행사관리 테이블
+        Vector col = new Vector();
+
+        for (int i = 0; i < EventTable.getColumnCount(); i++) {
+            col.add(EventTable.getColumnName(i));
+        }
+        return col;
+    }
+     
     public Vector getColumn_MemberTable() {
         // 멤버 테이블
         Vector col = new Vector();
@@ -1015,6 +928,12 @@ public class MainFrame extends javax.swing.JFrame {
     // --------------------------------------------------------
 
     //------------- 테이블 새로고침-----------------------
+    public void tableRefresh_EventTable() {
+        // 행사관리 테이블
+
+        DefaultTableModel model = new DefaultTableModel(dao_eventmanager.getEventIfon(), getColumn_EventTable());
+        EventTable.setModel(model);
+    }
     public void tableRefresh_MemberTable() {
         // 멤버 테이블
 
@@ -1038,10 +957,6 @@ public class MainFrame extends javax.swing.JFrame {
     //------------------------------------------------
 
     public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -1083,19 +998,15 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Update_Mfs;
     private javax.swing.JTable EventTable;
     private javax.swing.JButton FrameCall_Calander;
-    private javax.swing.JButton FrameCall_Member;
     private javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JLabel Label_SearchMember_Mfs;
     private javax.swing.JTable MemberTable;
     private javax.swing.JTable MsfTable;
     private javax.swing.JLabel NotPaymentAll_Mfs;
     private javax.swing.JPanel Panel_EventManager;
-    private javax.swing.JPanel Panel_MemberManager;
+    public static javax.swing.JPanel Panel_MemberManager;
     private javax.swing.JPanel Panel_PayManager;
     public static javax.swing.JTextField TF_AllStudent;
-    private javax.swing.JTextField TF_AverageMoney;
-    private javax.swing.JTextField TF_EventDate;
-    private javax.swing.JTextField TF_EventName;
     public static javax.swing.JTextField TF_NewStudent;
     public static javax.swing.JTextField TF_OldStudent;
     private javax.swing.JTextField TF_StudentId;
@@ -1112,7 +1023,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField Tf_PresentMoney;
     private javax.swing.JTextField Tf_Price;
     private javax.swing.JTextField Tf_Remarks;
-    private javax.swing.JTextField Tf_SearchMember_Mfs;
+    public static javax.swing.JTextField Tf_SearchMember_Mfs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -1123,9 +1034,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1153,7 +1061,7 @@ public class MainFrame extends javax.swing.JFrame {
         String department = Tf_Department.getText();
         String name = Tf_Name_Mem.getText();
         String phone = Tf_Phone.getText();
-        String year = TF_StudentId.getText().substring(0,4);
+        String year = TF_StudentId.getText().substring(0, 4);
 
         dto.setStudent_id(Integer.parseInt(id));
         dto.setDepartment(department);

@@ -89,8 +89,7 @@
                                           <Component id="Tf_Price" alignment="0" max="32767" attributes="0"/>
                                           <Component id="Tf_Event" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="FrameCall_Member" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="Tf_Date" max="32767" attributes="0"/>
@@ -205,7 +204,6 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel4" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                           <Component id="Tf_Name" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="FrameCall_Member" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -433,14 +431,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tf_SearchMember_MfsActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="FrameCall_Member">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd68c;&#xc6d0;"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FrameCall_MemberActionPerformed"/>
-              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
@@ -518,6 +511,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Panel_MemberManager">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="&#xd68c;&#xc6d0;&#xad00;&#xb9ac;">
@@ -654,8 +650,8 @@
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="0">
                         <Column editable="false" title="&#xd559;&#xbc88;" type="java.lang.Object"/>
-                        <Column editable="false" title="&#xd559;&#xacfc;" type="java.lang.Object"/>
                         <Column editable="false" title="&#xc774;&#xb984;" type="java.lang.Object"/>
+                        <Column editable="false" title="&#xd559;&#xacfc;" type="java.lang.Object"/>
                         <Column editable="false" title="&#xc804;&#xd654;&#xbc88;&#xd638;" type="java.lang.Object"/>
                       </Table>
                     </Property>
@@ -810,25 +806,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="751" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="TF_EventDate" min="-2" pref="131" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="TF_EventName" min="-2" pref="131" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TF_AverageMoney" min="-2" pref="141" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="86" max="32767" attributes="0"/>
+                      <EmptySpace pref="289" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -838,24 +816,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane3" pref="545" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel24" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="TF_EventDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel25" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="TF_EventName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel26" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="TF_AverageMoney" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -915,48 +875,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel24">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xb0a0;      &#xc9dc;"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_EventDate">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xd589;&#xc0ac; &#xb0a0;&#xc9dc;"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_EventDateActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel25">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd589;      &#xc0ac;"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_EventName">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="&#xd589;&#xc0ac; &#xc774;&#xb984;"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_EventNameActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel26">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd3c9;&#xade0;&#xd68c;&#xbe44; "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_AverageMoney">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="1&#xc778;&#xb2f9; &#xd3c9;&#xade0;&#xd68c;&#xbe44;"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TF_AverageMoneyActionPerformed"/>
-              </Events>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

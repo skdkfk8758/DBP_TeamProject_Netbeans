@@ -1,14 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    회원목록 데이터에 접근하기 위한 객체
  */
 package BackGround;
 
-/**
- *
- * @author xkdlr
- */
 public class MemberDTO {
 
     private int Student_id, year;

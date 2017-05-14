@@ -1,8 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    달력 프레임
+*/
+
 package View;
 
 import java.awt.BorderLayout;
@@ -24,10 +23,6 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author CarpDm
- */
 public class Frame_Calander extends javax.swing.JFrame implements MouseListener, ActionListener {
 
     @SuppressWarnings("unchecked")
@@ -172,6 +167,7 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
         p.add(Btn_Enter);
         add(p, BorderLayout.SOUTH);
 
+        super.setTitle("달력");
         setBounds(1110,0,0,0);
         setVisible(true);
         pack();

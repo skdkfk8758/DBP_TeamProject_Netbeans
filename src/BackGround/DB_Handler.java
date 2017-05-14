@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    DB 접속 및 종료 메소드 구현
  */
 package BackGround;
 
@@ -9,15 +7,12 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- *
- * @author CarpDm
- */
 public class DB_Handler {
 
     /*
 	 * 싱글톤패턴으로 DB_Handler 구현
      */
+    
     // private static 로 선언.
     private static DB_Handler instance = null;
 
@@ -30,24 +25,17 @@ public class DB_Handler {
     }
 
     //디비 접속을 위한 변수선언
-//    private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
-//    private static String url = "jdbc:oracle:thin:@25.11.88.29:1522:orcl";
-//    private static String url = "jdbc:oracle:thin:@127.0.0.1:1522:orcl";
-//    private static String user = "dbpadmin";
-//    private static String password = "admin123";
+    private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private static String url = "jdbc:oracle:thin:@25.11.88.29:1521:xe";
+    private static String user = "Oracle_DBP";
+    private static String password = "dbpadmin";
     
-    private static String DRIVER = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://25.11.88.29:3306/dbp";
-//    private static String url = "jdbc:mysql://127.0.0.1:3306/dbp";
-    private static String user = "dbpadmin";
-    private static String password = "admin123";
     
     static {
         try {
             Class.forName(DRIVER);
             System.out.println("Driver Loading Succ");
         } catch (Exception e) {
-            // TODO: handle exception
             e.getMessage();
         }
     }
