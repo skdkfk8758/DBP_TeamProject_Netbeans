@@ -6,7 +6,6 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +22,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-public class Frame_Calander extends javax.swing.JFrame implements MouseListener, ActionListener {
+public final class Frame_Calander extends javax.swing.JFrame implements MouseListener, ActionListener {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -120,7 +119,7 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
     // 달력 테이블 생성 메소드
     public JScrollPane MakeCalScrollPane(int flag) {
 
-        new MakeCalendar(flag);
+        MakeCalendar makeCalendar = new MakeCalendar(flag);
 
         DefaultTableModel model = new DefaultTableModel(CalData, CalHeader);
 
@@ -208,11 +207,11 @@ public class Frame_Calander extends javax.swing.JFrame implements MouseListener,
 
         if (command.equals(Btn_Next.getText())) {
             dispose();
-            new Frame_Calander(-1);
+            Frame_Calander frame_Calander = new Frame_Calander(-1);
         } else if (command.equals(Btn_Prev.getText())) {
 
             dispose();
-            new Frame_Calander(1);
+            Frame_Calander frame_Calander = new Frame_Calander(1);
 
         } else
             dispose();

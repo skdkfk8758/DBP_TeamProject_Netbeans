@@ -6,9 +6,9 @@ package BackGround;
 
 import View.MainFrame;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Vector;
 
 public class MfsDAO {
@@ -25,7 +25,7 @@ public class MfsDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
             
             //날짜순으로 정렬해서 테이블 출력
             String sql = "SELECT * FROM team_mfs ORDER BY mydate";
@@ -56,10 +56,10 @@ public class MfsDAO {
                 data.add(row);
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return data;
@@ -79,7 +79,7 @@ public class MfsDAO {
         int notpaymoney = 0;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
             
             //회원 이름별로 날짜순 정렬 -> 회원검색시
             String sql = "SELECT * FROM team_mfs WHERE name = ? ORDER BY mydate";
@@ -117,10 +117,10 @@ public class MfsDAO {
 
             MainFrame.Tf_NotPayMoney_Mfs.setText(Integer.toString(notpaymoney));
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return data;
@@ -138,7 +138,7 @@ public class MfsDAO {
         try {
             int allmoney = 0, notpaymoney = 0, currentmonry = 0;
 
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
             
             // 납부금액, 미납금액을 읽어오는 쿼리문
             String sql = "SELECT pay, notpay FROM team_mfs";
@@ -158,10 +158,10 @@ public class MfsDAO {
             data.add(currentmonry);
             data.add(notpaymoney);
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return data;
@@ -176,7 +176,7 @@ public class MfsDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
             
             //회원목록에서 회원이 있는지 검색
             String select_sql = "SELECT count(*) FROM team_member where name = ?";
@@ -206,10 +206,9 @@ public class MfsDAO {
                 if(result > 0)
                     ok = true;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;
@@ -224,7 +223,7 @@ public class MfsDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             //날짜, 행사, 이름을 가지고 레코드 삭제
             String sql = "DELETE FROM team_mfs WHERE mydate = ? and event = ? and name = ?";
@@ -240,10 +239,10 @@ public class MfsDAO {
                 ok = true;
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;
@@ -258,7 +257,7 @@ public class MfsDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             //날짜와 행사이름, 회원이름을 가지고 납부금액 수정, 비고도 수정 가능
             String sql = "UPDATE team_mfs set pay = ?, notpay = ?, remarks = ? WHERE mydate = ? and event = ? and name = ?";
@@ -279,10 +278,9 @@ public class MfsDAO {
                 ok = true;
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;

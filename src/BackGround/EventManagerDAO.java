@@ -3,13 +3,10 @@
  */
 package BackGround;
 
-import View.MainFrame;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.sql.SQLException;
 import java.util.Vector;
 
 public class EventManagerDAO {
@@ -26,7 +23,7 @@ public class EventManagerDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             String sql = "select mydate, event, count(name), sum(pay), sum(notpay) as pay from team_mfs group by mydate, event";
 
@@ -53,10 +50,10 @@ public class EventManagerDAO {
                 data.add(row);
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return data;

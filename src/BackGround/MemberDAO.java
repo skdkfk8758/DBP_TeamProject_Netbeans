@@ -6,15 +6,13 @@ package BackGround;
 
 import View.MainFrame;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Vector;
-import javax.swing.JOptionPane;
 
 public class MemberDAO {
 
@@ -38,7 +36,7 @@ public class MemberDAO {
         String year = year_SDF.format(date);
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             // 학번순으로 오름차순 정렬
             String sql = "SELECT * FROM team_member ORDER BY id";
@@ -77,10 +75,10 @@ public class MemberDAO {
                 data.add(row);
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return data;
@@ -95,7 +93,7 @@ public class MemberDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             String sql = "INSERT INTO team_member VALUES(?,?,?,?,?)";
             pstmt = con.prepareStatement(sql);
@@ -115,10 +113,9 @@ public class MemberDAO {
                 ok = true;
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;
@@ -133,7 +130,7 @@ public class MemberDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             //학번으로 검색하여 삭제
             String sql = "DELETE FROM team_member WHERE id = ?";
@@ -147,10 +144,10 @@ public class MemberDAO {
                 ok = true;
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;
@@ -165,7 +162,7 @@ public class MemberDAO {
         ResultSet rs = null;
 
         try {
-            con = dB_Handler.getConnection();
+            con = DB_Handler.getConnection();
 
             //학번을 가지고 나머지 데이터 수정
             String sql = "UPDATE team_member set department = ?, name = ?, phone = ? WHERE id = ?";
@@ -182,10 +179,9 @@ public class MemberDAO {
                 ok = true;
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         } finally {
-            dB_Handler.close(con, pstmt, rs);
+            DB_Handler.close(con, pstmt, rs);
         }
 
         return ok;

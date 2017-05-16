@@ -11,13 +11,10 @@ import BackGround.MemberDTO;
 import BackGround.MfsDAO;
 import BackGround.MfsDTO;
 import java.util.Vector;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.StackType;
 
-public class MainFrame extends javax.swing.JFrame {
+public final class MainFrame extends javax.swing.JFrame {
 
     MfsDAO dao_mfs = new MfsDAO();
     MemberDAO dao_member = new MemberDAO();
@@ -848,7 +845,7 @@ public class MainFrame extends javax.swing.JFrame {
     //달력 프레임 호출
     private void FrameCall_CalanderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrameCall_CalanderActionPerformed
 
-        new Frame_Calander(0);
+        Frame_Calander frame_Calander = new Frame_Calander(0);
     }//GEN-LAST:event_FrameCall_CalanderActionPerformed
 
     // 회비관리 마우스 클릭 이벤트
@@ -964,25 +961,19 @@ public class MainFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                MainFrame f = new MainFrame();
-
-                f.setTitle("회비관리 프로그램");
-                f.setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            MainFrame f = new MainFrame();
+            
+            f.setTitle("회비관리 프로그램");
+            f.setVisible(true);
         });
     }
 

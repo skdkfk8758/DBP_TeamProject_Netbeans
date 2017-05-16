@@ -35,7 +35,7 @@ public class DB_Handler {
         try {
             Class.forName(DRIVER);
             System.out.println("Driver Loading Succ");
-        } catch (Exception e) {
+        } catch (ClassNotFoundException e) {
             e.getMessage();
         }
     }
@@ -49,7 +49,7 @@ public class DB_Handler {
             connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connection Succ");
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             // TODO: handle exception
             e.getStackTrace();
         }
@@ -64,7 +64,7 @@ public class DB_Handler {
          if(rs != null) rs.close();
          if(pstmt != null) pstmt.close();
         if(conn != null) conn.close();
-        } catch(Exception e){
+        } catch(SQLException e){
             e.getMessage();
         }
     }
