@@ -930,12 +930,14 @@ public final class MainFrame extends javax.swing.JFrame {
 
         DefaultTableModel model = new DefaultTableModel(dao_eventmanager.getEventIfon(), getColumn_EventTable());
         EventTable.setModel(model);
+        
     }
     public void tableRefresh_MemberTable() {
         // 멤버 테이블
 
         DefaultTableModel model = new DefaultTableModel(dao_member.getMemberList(), getColumn_MemberTable());
         MemberTable.setModel(model);
+        
     }
 
     public void tableRefresh_MfsTable(Vector vv) {
@@ -944,6 +946,8 @@ public final class MainFrame extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel(vv, getColumn_MsfTable());
         MsfTable.setModel(model);
 
+        tableRefresh_EventTable();
+        
         Vector v = dao_mfs.getMfsSelectMoney();
 
         Tf_AllMoney.setText(String.format("%,10d", v.get(0)) + "원");
