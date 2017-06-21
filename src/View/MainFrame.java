@@ -727,7 +727,7 @@ public final class MainFrame extends javax.swing.JFrame {
             setNullData_Member();
             tableRefresh_MemberTable();
         } else {
-            JOptionPane.showMessageDialog(this, "회원 추가 실패");
+            JOptionPane.showMessageDialog(this, "학번에 숫자를 입력해주세요");
         }
     }//GEN-LAST:event_Btn_Enter_MemActionPerformed
 
@@ -818,7 +818,7 @@ public final class MainFrame extends javax.swing.JFrame {
             setNullData_Mfs();
             tableRefresh_MfsTable(dao.getMfsList());
         } else {
-            JOptionPane.showMessageDialog(this, "회비내용 수정 실패");
+            JOptionPane.showMessageDialog(this, "납부금액과 비고만 수정이 가능합니다");
         }
     }//GEN-LAST:event_Btn_Update_MfsActionPerformed
 
@@ -838,7 +838,7 @@ public final class MainFrame extends javax.swing.JFrame {
             setNullData_Mfs();
             tableRefresh_MfsTable(dao.getMfsList());
         } else {
-            JOptionPane.showMessageDialog(this, "입력 실패");
+            JOptionPane.showMessageDialog(this, "회원이 없습니다");
         }
     }//GEN-LAST:event_Btn_Enter_MfsActionPerformed
 
