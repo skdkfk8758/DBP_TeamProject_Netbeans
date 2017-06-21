@@ -748,8 +748,8 @@ public final class MainFrame extends javax.swing.JFrame {
 
         int r = MemberTable.getSelectedRow();
         String id = Integer.toString((int) MemberTable.getValueAt(r, 0));
-        String department = (String) MemberTable.getValueAt(r, 1);
-        String name_Mem = (String) MemberTable.getValueAt(r, 2);
+        String department = (String) MemberTable.getValueAt(r, 2);
+        String name_Mem = (String) MemberTable.getValueAt(r, 1);
         String phone = (String) MemberTable.getValueAt(r, 3);
 
         TF_StudentId.setText(id);

@@ -1,7 +1,6 @@
 /*
     회비관리 DB에 접근하기위한 객체
-*/
-
+ */
 package BackGround;
 
 import View.MainFrame;
@@ -9,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Vector;
 
 public class MfsDAO {
@@ -26,7 +26,7 @@ public class MfsDAO {
 
         try {
             con = DB_Handler.getConnection();
-            
+
             //날짜순으로 정렬해서 테이블 출력
             String sql = "SELECT * FROM team_mfs ORDER BY mydate";
 
@@ -80,7 +80,7 @@ public class MfsDAO {
 
         try {
             con = DB_Handler.getConnection();
-            
+
             //회원 이름별로 날짜순 정렬 -> 회원검색시
             String sql = "SELECT * FROM team_mfs WHERE name = ? ORDER BY mydate";
 
@@ -139,7 +139,7 @@ public class MfsDAO {
             int allmoney = 0, notpaymoney = 0, currentmonry = 0;
 
             con = DB_Handler.getConnection();
-            
+
             // 납부금액, 미납금액을 읽어오는 쿼리문
             String sql = "SELECT pay, notpay FROM team_mfs";
 
@@ -167,6 +167,38 @@ public class MfsDAO {
         return data;
     }
 
+    //회비내용 추가할때 중복확인 메소드
+    public boolean check_overlap(MfsDTO dto) {
+        boolean ok = false;
+        
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            con = DB_Handler.getConnection();
+
+            //회원목록에서 회원이 있는지 검색
+            String select_sql = "SELECT count(*) FROM team_mfs where name = ? and mydate = ? and event = ?";
+
+            pstmt = con.prepareStatement(select_sql);
+
+            pstmt.setString(1, dto.getMembername());
+            pstmt.setString(2, dto.getMydate());
+            pstmt.setString(3, dto.getMemo());
+
+            rs = pstmt.executeQuery();
+            rs.next();
+            if(rs.getInt(1)<=0)
+                ok=true;
+            
+        } catch (SQLException e) {
+        } finally {
+            DB_Handler.close(con, pstmt, rs);
+        }
+        return ok;
+    }
+    
     //회비내용 추가 메소드
     public boolean insertMfs(MfsDTO dto) {
         boolean ok = false;
@@ -177,7 +209,7 @@ public class MfsDAO {
 
         try {
             con = DB_Handler.getConnection();
-            
+
             //회원목록에서 회원이 있는지 검색
             String select_sql = "SELECT count(*) FROM team_member where name = ?";
 
@@ -187,8 +219,8 @@ public class MfsDAO {
 
             rs = pstmt.executeQuery();
             rs.next();
-
-            if (rs.getInt(1)>0) {
+   
+            if (rs.getInt(1) > 0 && check_overlap(dto)) {
                 //회원검색 성공 시 회비 내용 추가
                 String sql = "INSERT INTO team_mfs VALUES(?,?,?,?,?,?,?)";
                 pstmt = con.prepareStatement(sql);
@@ -202,9 +234,10 @@ public class MfsDAO {
                 pstmt.setString(7, dto.getRemarks());
 
                 int result = pstmt.executeUpdate();
-                
-                if(result > 0)
+
+                if (result > 0) {
                     ok = true;
+                }
             }
         } catch (SQLException e) {
         } finally {

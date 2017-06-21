@@ -1,7 +1,6 @@
 /*
     회원목록 DB에 접근하기위한 객체
-*/
-
+ */
 package BackGround;
 
 import View.MainFrame;
